@@ -51,6 +51,4 @@ tester.run_link_prediction(type_constrain = False)
 if not os.path.exists('results'):
 	os.makedirs('results')
 result_path = 'results/transe_FB15K237.embeddings.json'
-
-with open(result_path, mode='w') as f:
-	f.write(json.dumps({k: v.cpu().numpy().tolist() for k, v in transe.items()}))
+transe.save_parameters(result_path)
