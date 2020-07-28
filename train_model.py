@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import csv
 from openke.config import Trainer, Tester
 from openke.module.model import TransE
 from openke.module.loss import MarginLoss
@@ -64,4 +65,4 @@ entities_with_vectors = pd.merge(left=entities_with_vectors, right=dbpedia_mappi
 if not os.path.exists('results'):
 	os.makedirs('results')
 result_path = 'results/transe_FB15K237.embeddings.txt'
-entities_with_vectors.to_csv(result_path, sep=' ', header=False, index=False)
+entities_with_vectors.to_csv(result_path, sep=' ', header=False, index=False, quoting=csv.QUOTE_NONE)
