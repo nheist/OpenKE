@@ -64,5 +64,5 @@ entities_with_vectors = pd.merge(left=entities_with_vectors, right=dbpedia_mappi
 # persist the model
 if not os.path.exists('results'):
 	os.makedirs('results')
-result_path = 'results/transe_FB15K237.embeddings.txt'
+result_path = 'results/transe_FB15K237.txt'
 entities_with_vectors.to_csv(result_path, sep=' ', header=False, index=False, quoting=csv.QUOTE_NONE)
